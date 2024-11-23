@@ -1,0 +1,723 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+}
+
+a {
+  text-decoration: none; 
+}
+
+a:hover {
+  text-decoration: none; 
+}
+
+/* Estilo do cabeçalho */
+header {
+  width: 100%;
+  height: 10vh;
+  background-color: rgb(158, 9, 9);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1002; 
+}
+
+#header-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+#menu {
+  cursor: pointer;
+  height: 40px;
+  margin-right: 20px;
+  z-index: 1003; 
+}
+
+#logo {
+  height: 70px; 
+  margin: 0 auto; 
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); 
+  z-index: 1002; 
+}
+
+#user {
+  height: 40px;
+  cursor: pointer;
+  z-index: 1003; 
+}
+
+/* Menu Dropdown */
+#dropdownMenu {
+  display: none; 
+  position: absolute;
+  top: 10vh;
+  left: 0;
+  width: 100%;
+  background-color: rgba(158, 9, 9, 0.95);
+  padding: 60px 20px 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+  transition: all 0.3s ease; 
+}
+
+#dropdownMenu.open {
+  display: block; 
+}
+.menu-section {
+  margin-bottom: 20px;
+}
+
+.menu-section h2 {
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #ffd700;
+  margin-bottom: 10px;
+}
+
+.menu-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.menu-section ul li {
+  margin: 10px 0;
+}
+
+.menu-section ul li a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.menu-section ul li a:hover {
+  color: #ffd700;
+}
+
+/* Responsividade para o menu dropdown */
+@media (max-width: 768px) {
+  #dropdownMenu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    height: 100vh;
+    overflow-y: auto;
+    background-color: rgba(158, 9, 9, 0.95);
+    transition: left 0.3s ease;
+    z-index: 1001;
+    padding: 60px 20px 20px;
+  }
+
+  #dropdownMenu.open {
+    left: 0;
+  }
+
+  #menu {
+    position: fixed;
+    top: 15px;
+    left: 20px;
+    height: 35px;
+    width: 35px;
+    z-index: 1003;
+  }
+
+  #user {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    height: 35px;
+    width: 35px;
+    z-index: 1003;
+  }
+
+  #logo {
+    height: 50px; 
+    top: 15px; 
+    transform: translateX(-50%); 
+  }
+}
+
+/* Estilo para o Menu Hambúrguer */
+.hamburger {
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.hamburger .bar {
+  display: block;
+  width: 35px;
+  height: 5px;
+  margin: 6px 0;
+  background-color: #fff;
+  transition: 0.4s;
+}
+
+.hamburger.open .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Centralização do Menu Dropdown em resoluções maiores */
+@media (min-width: 768px) {
+  #dropdownMenu {
+    width: 300px; 
+    left: 20px;
+    top: 10vh;
+    height: auto; 
+    position: absolute;
+  }
+}
+
+
+
+header #user {
+  position: absolute;
+  right: 0;
+  margin-right: 2vh;
+}
+
+.choice {
+  width: 100%;
+  height: 90vh;
+}
+.choice .female {
+  position: absolute;
+  left: 0;
+  width: 50%;
+  height: 90vh;
+  background-image: url(images/model_one.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.choice .female h1 {
+  visibility: hidden;
+  color: white;
+  font-size: 50px;
+  text-decoration: none;
+}
+.choice .female .temas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+}
+.choice .female .temas:hover {
+  cursor: pointer;
+  background: rgba(207, 168, 91, 0.4784313725);
+}
+.choice .female .temas:hover h1 {
+  visibility: visible;
+  transition: 0.5s;
+}
+.choice .male {
+  position: absolute;
+  right: 0;
+  width: 50%;
+  height: 90vh;
+  background-image: url(images/model_two.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.choice .male h1 {
+  visibility: hidden;
+  color: white;
+  font-size: 50px;
+  text-decoration: none;
+}
+.choice .male .temas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+}
+.choice .male .temas:hover {
+  cursor: pointer;
+  background: rgba(207, 168, 91, 0.4784313725);
+}
+.choice .male .temas:hover h1 {
+  visibility: visible;
+  transition: 0.5s;
+  text-decoration: none; 
+}
+
+/* Responsividade para "female" e "male" seções a partir de 1024px */
+@media (max-width: 768px) {
+  .choice {
+    display: flex;
+    flex-direction: column; 
+    height: auto;
+  }
+
+  .choice .female, .choice .male {
+    width: 100%; 
+    height: 85vh;
+    position: relative; 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+  }
+
+}
+
+
+
+
+
+/* Estilo global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo principal da página */
+.main_login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #4a0e0e, #8b1f1f); 
+}
+
+/* Cartão principal */
+.back_card {
+  display: flex;
+  width: 70%;
+  height: 80vh;
+  background-color: white;
+  border-radius: 25px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.back_card:hover {
+  transform: scale(1.02);
+}
+
+/* Lado esquerdo com a imagem */
+.image_left {
+  width: 50%;
+  height: 100%;
+  background-image: url("images/model_three.jpg"); 
+  background-size: cover;
+  background-position: center;
+  border-radius: 25px 0 0 25px;
+  box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Lado direito com o formulário */
+.form_login {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background-color: #cfa85b;
+}
+
+/* Título */
+.title {
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Formulário */
+.form_login form {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; 
+}
+
+.form_login label {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.form_login input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-color: rgba(255, 255, 255, 0.9);
+  font-size: 16px;
+  width: 100%;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.form_login input:focus {
+  border-color: #d5b874;
+  background-color: rgb(255, 255, 255);
+}
+
+/* Botão */
+.form_login button {
+  padding: 12px 25px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: white;
+  color: #cfa85b;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form_login button:hover {
+  background-color: #d5b874;
+  color: white;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo base para links */
+.form_login a {
+  font-size: 18px;
+  color: white; 
+  text-decoration: none;
+  margin-top: 20px; 
+  text-align: center;
+  transition: all 0.3s ease;
+  display: inline-block; 
+  padding: 10px 20px; 
+  border-radius: 8px; 
+  background-color: #cfa85b; 
+}
+
+/* Efeito hover para links */
+.form_login a:hover {
+  background-color: #d5b874; 
+  color: #333; 
+  text-decoration: none; 
+}
+
+/* Estilo do Modal */
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); 
+}
+
+/* Conteúdo do Modal */
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+  width: 40%;
+  text-align: center;
+}
+
+/* Título do Modal */
+.modal-content h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Texto do Modal */
+.modal-content p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Campo de input no modal */
+.modal-content input {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Botões no Modal */
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.modal-buttons button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.modal-buttons button[type=submit] {
+  background-color: #cfa85b;
+  color: white;
+}
+
+.modal-buttons button[type=submit]:hover {
+  background-color: #d5b874;
+}
+
+.modal-buttons button#cancelButton {
+  background-color: #aaa;
+  color: white;
+}
+
+.modal-buttons button#cancelButton:hover {
+  background-color: #888;
+}
+
+/* Fechar Modal */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #333;
+}
+
+.email-message {
+  font-size: 14px;
+  margin-top: 5px;
+  text-align: left;
+}
+
+.success-message {
+  font-size: 16px;
+  color: green;
+  text-align: center;
+  display: none; 
+  margin-top: 15px;
+}
+
+/* Estilo do Modal */
+.modal-content {
+  position: relative; 
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 10px;
+  width: 40%; /* Largura do modal */
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* Estilo global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo principal da página */
+.main_register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #4a0e0e, #8b1f1f); 
+}
+
+/* Cartão principal */
+.back_card {
+  display: flex;
+  width: 70%;
+  height: 80vh;
+  background-color: white;
+  border-radius: 25px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.back_card:hover {
+  transform: scale(1.02);
+}
+
+/* Lado esquerdo com a imagem */
+.image_left {
+  width: 50%;
+  height: 100%;
+  background-image: url("images/model_three.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 25px 0 0 25px;
+  box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Lado direito com o formulário */
+.form_register {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background-color: #cfa85b;
+}
+
+/* Título */
+.title {
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Formulário */
+.form_register form {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; 
+}
+
+.form_register label {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.form_register input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-color: rgba(255, 255, 255, 0.9);
+  font-size: 16px;
+  width: 100%;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.form_register input:focus {
+  border-color: #d5b874;
+  background-color: rgb(255, 255, 255);
+}
+
+/* Botão de Registro */
+.form_register button {
+  padding: 12px 25px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: white;
+  color: #cfa85b;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form_register button:hover {
+  background-color: #d5b874;
+  color: white;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Botões "Voltar ao Menu" e "Já tem conta? Login" */
+.form_register a {
+  font-size: 18px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  margin-top: 20px;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background-color: transparent; 
+}
+
+.form_register a:hover {
+  color: #d5b874;
+  text-decoration: underline;
+}
+
+
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .back_card {
+    flex-direction: column;
+    width: 90%;
+    height: auto;
+  }
+  .image_left {
+    width: 100%;
+    height: 200px;
+    border-radius: 25px 25px 0 0;
+  }
+  .form_register {
+    width: 100%;
+    padding: 20px;
+  }
+  .form_register form {
+    width: 100%;
+  }
+}/*# sourceMappingURL=style.css.map */
+
+@media (max-width: 778px) {
+  .image_left {
+    display: none; 
+  }
+
+  .back_card {
+    width: 80%; 
+    height: auto; 
+    margin: 0 auto; 
+    flex-direction: column; 
+    border-radius: 15px; 
+  }
+
+  .form_login {
+    width: 100%; 
+    padding: 20px; 
+  }
+}

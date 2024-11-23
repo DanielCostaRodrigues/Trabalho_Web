@@ -1,0 +1,85 @@
+/* Geral */
+html, body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+
+/* Seção de Termos */
+.terms-section {
+    background-color: #fff;
+    padding: 30px;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    margin: 0 auto;
+}
+
+.terms-section .section-title {
+    font-size: 40px; 
+    color: #9e0909;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    line-height: 1.2;
+    border-bottom: 3px solid #ffd700;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.terms-section p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.terms-section h2 {
+    font-size: 24px;
+    color: #9e0909;
+    margin-bottom: 10px;
+}
+
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .terms-section {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .terms-section p,
+    .terms-section h2 {
+        font-size: 16px;
+    }
+
+    .nav-links, .actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
