@@ -1,0 +1,367 @@
+/* Estilo global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo principal da página */
+.main_login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #4a0e0e, #8b1f1f);
+}
+
+/* Lado direito com o formulário */
+.form_login {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background-color: #cfa85b;
+}
+
+/* Formulário */
+.form_login form {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form_login label {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.form_login input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-color: rgba(255, 255, 255, 0.9);
+  font-size: 16px;
+  width: 100%;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.form_login input:focus {
+  border-color: #d5b874;
+  background-color: rgb(255, 255, 255);
+}
+
+/* Botão */
+.form_login button {
+  padding: 12px 25px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: white;
+  color: #cfa85b;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form_login button:hover {
+  background-color: #d5b874;
+  color: white;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo base para links */
+.form_login a {
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+  margin-top: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: #cfa85b;
+}
+
+/* Efeito hover para links */
+.form_login a:hover {
+  background-color: #d5b874;
+  color: #333;
+  text-decoration: none;
+}
+
+/* Estilo do Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Título do Modal */
+.modal-content h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Texto do Modal */
+.modal-content p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Campo de input no modal */
+.modal-content input {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Botões no Modal */
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.modal-buttons button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.modal-buttons button[type="submit"] {
+  background-color: #cfa85b;
+  color: white;
+}
+
+.modal-buttons button[type="submit"]:hover {
+  background-color: #d5b874;
+}
+
+.modal-buttons button#cancelButton {
+  background-color: #aaa;
+  color: white;
+}
+
+.modal-buttons button#cancelButton:hover {
+  background-color: #888;
+}
+
+/* Fechar Modal */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #333;
+}
+
+.email-message {
+  font-size: 14px;
+  margin-top: 5px;
+  text-align: left;
+}
+
+.success-message {
+  font-size: 16px;
+  color: green;
+  text-align: center;
+  display: none;
+  margin-top: 15px;
+}
+
+/* Estilo do Modal */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 10px;
+  width: 40%; /* Largura do modal */
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* Estilo principal da página */
+.main_register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #4a0e0e, #8b1f1f);
+}
+
+/* Cartão principal */
+.back_card {
+  display: flex;
+  width: 70%;
+  height: 80vh;
+  background-color: white;
+  border-radius: 25px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.back_card:hover {
+  transform: scale(1.02);
+}
+
+/* Lado esquerdo com a imagem */
+.image_left {
+  width: 50%;
+  height: 100%;
+  background-image: url("../images/model_three.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 25px 0 0 25px;
+  box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Lado direito com o formulário */
+.form_register {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background-color: #cfa85b;
+}
+
+/* Título */
+.title {
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Formulário */
+.form_register form {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form_register label {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.form_register input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-color: rgba(255, 255, 255, 0.9);
+  font-size: 16px;
+  width: 100%;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.form_register input:focus {
+  border-color: #d5b874;
+  background-color: rgb(255, 255, 255);
+}
+
+/* Botão de Registro */
+.form_register button {
+  padding: 12px 25px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: white;
+  color: #cfa85b;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form_register button:hover {
+  background-color: #d5b874;
+  color: white;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Botões "Voltar ao Menu" e "Já tem conta? Login" */
+.form_register a {
+  font-size: 18px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  margin-top: 20px;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background-color: transparent;
+}
+
+.form_register a:hover {
+  color: #d5b874;
+  text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .form_register {
+    width: 100%;
+    padding: 20px;
+  }
+  .form_register form {
+    width: 100%;
+  }
+
+  .image_left {
+    display: none;
+  }
+
+  .back_card {
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+    flex-direction: column;
+    border-radius: 15px;
+  }
+
+  .form_login {
+    width: 100%;
+    padding: 20px;
+  }
+}

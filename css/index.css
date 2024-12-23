@@ -1,0 +1,347 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header */
+#user-name {
+  font-family: "Arial", sans-serif;
+  font-size: 1.2rem;
+  color: white;
+  text-align: right;
+  margin-right: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+#user-name:hover {
+  text-decoration: underline;
+}
+
+#user-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: none;
+  z-index: 1000;
+  width: 150px;
+}
+
+#user-dropdown a {
+  display: block;
+  padding: 10px;
+  color: #333;
+  font-size: 0.9rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+#user-dropdown a:hover {
+  background-color: #f4f4f4;
+  color: #9e0909;
+}
+
+/* Rodapé */
+footer {
+  background-color: #530505;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-right: 35px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ffd700;
+}
+
+/* Estilo do cabeçalho */
+header {
+  width: 100%;
+  height: 10vh;
+  background-color: rgb(158, 9, 9);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1002;
+}
+
+#header-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+#menu {
+  cursor: pointer;
+  height: 40px;
+  margin-right: 20px;
+  z-index: 1003;
+}
+
+#logo {
+  height: 70px;
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1002;
+}
+
+#user {
+  height: 40px;
+  cursor: pointer;
+  z-index: 1003;
+}
+
+/* Menu Dropdown */
+#dropdownMenu {
+  display: none;
+  position: absolute;
+  top: 10vh;
+  left: 0;
+  width: 25%;
+  background-color: rgba(158, 9, 9, 0.95);
+  padding: 60px 20px 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+  transition: all 0.3s ease;
+}
+
+#dropdownMenu.open {
+  display: block;
+}
+.menu-section {
+  margin-bottom: 20px;
+}
+
+.menu-section h2 {
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #ffd700;
+  margin-bottom: 10px;
+}
+
+.menu-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.menu-section ul li {
+  margin: 10px 0;
+}
+
+.menu-section ul li a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.menu-section ul li a:hover {
+  color: #ffd700;
+}
+
+/* Estilo para o Menu Hambúrguer */
+.hamburger {
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.hamburger .bar {
+  display: block;
+  width: 35px;
+  height: 5px;
+  margin: 6px 0;
+  background-color: #fff;
+  transition: 0.4s;
+}
+
+.hamburger.open .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+header #user {
+  position: absolute;
+  right: 0;
+  margin-right: 2vh;
+}
+
+.choice {
+  width: 100%;
+  height: 90vh;
+}
+
+.choice a {
+  text-decoration: none; /* Remove o sublinhado dos links */
+}
+
+.choice a:hover {
+  text-decoration: none; /* Garante que o sublinhado não apareça ao passar o mouse */
+}
+
+.choice .female {
+  position: absolute;
+  left: 0;
+  width: 50%;
+  height: 90vh;
+  background-image: url(../images/model_one.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.choice .female h1 {
+  visibility: hidden;
+  color: white;
+  font-size: 50px;
+  text-decoration: none;
+}
+.choice .female .temas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+}
+.choice .female .temas:hover {
+  cursor: pointer;
+  background: rgba(207, 168, 91, 0.4784313725);
+}
+.choice .female .temas:hover h1 {
+  visibility: visible;
+  transition: 0.5s;
+}
+.choice .male {
+  position: absolute;
+  right: 0;
+  width: 50%;
+  height: 90vh;
+  background-image: url(../images/model_two.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.choice .male h1 {
+  visibility: hidden;
+  color: white;
+  font-size: 50px;
+  text-decoration: none;
+}
+.choice .male .temas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+}
+.choice .male .temas:hover {
+  cursor: pointer;
+  background: rgba(207, 168, 91, 0.4784313725);
+}
+.choice .male .temas:hover h1 {
+  visibility: visible;
+  transition: 0.5s;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  #dropdownMenu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    height: 100vh;
+    overflow-y: auto;
+    background-color: rgba(158, 9, 9, 0.95);
+    transition: left 0.3s ease;
+    z-index: 1001;
+    padding: 60px 20px 20px;
+  }
+
+  #dropdownMenu.open {
+    left: 0;
+  }
+
+  #menu {
+    position: fixed;
+    top: 15px;
+    left: 20px;
+    height: 35px;
+    width: 35px;
+    z-index: 1003;
+  }
+
+  #user {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    height: 35px;
+    width: 35px;
+    z-index: 1003;
+  }
+
+  #logo {
+    height: 50px;
+    top: 15px;
+    transform: translateX(-50%);
+  }
+
+  .choice {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .choice .female,
+  .choice .male {
+    width: 100%;
+    height: 85vh;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  #dropdownMenu {
+    width: 300px;
+    left: 20px;
+    top: 10vh;
+    height: auto;
+    position: absolute;
+  }
+
+  #header-container {
+    justify-content: flex-end;
+  }
+}
