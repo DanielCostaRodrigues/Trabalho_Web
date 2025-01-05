@@ -1,17 +1,6 @@
 <?php
 
-$dsn = 'mysql:host=localhost;dbname=web;charset=utf8mb4';
-$db_user = 'web';
-$db_password = 'web';
-
-try {
-
-    $pdo = new PDO($dsn, $db_user, $db_password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-
-    die("Erro ao conectar com a base de dados: " . $e->getMessage());
-}
+require_once '../includes/db_connection.php'; // Inclui o ficheiro de conexão com a base de dados
 
 // Obtém os parâmetros de pesquisa da URL
 $searchQuery = isset($_GET['query']) ? trim($_GET['query']) : ''; // Texto da pesquisa

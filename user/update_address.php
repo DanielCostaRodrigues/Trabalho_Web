@@ -11,15 +11,14 @@ if (!isset($_SESSION['user_id'])) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $userId = $_SESSION['user_id'];
     $newAddress = $_POST['address'];
+    //$newAddress = htmlspecialchars(trim($_POST['address']));
 
-    $dsn = 'mysql:host=localhost;dbname=web;charset=utf8mb4';
-    $db_user = 'web';
-    $db_password = 'web';
+
+    require_once '../includes/db_connection.php'; // Inclui o ficheiro de conexão com a base de dados
+
 
     try {
 
-        $pdo = new PDO($dsn, $db_user, $db_password);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // Atualiza a morada do user na bd
         $stmt = $pdo->prepare('UPDATE users SET address = :address WHERE id = :id');

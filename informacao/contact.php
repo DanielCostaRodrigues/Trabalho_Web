@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato - Origens Lusas</title>
+    <title>contacto - Origens Lusas</title>
     <link rel="stylesheet" href="../css/style.css">
 
 </head>
@@ -15,8 +15,8 @@
 
     <main class="help-section">
         <div class="contact-container">
-            <h2>Contato</h2>
-            <p>Precisa de ajuda ou deseja entrar em contato conosco? Veja as opções abaixo:</p>
+            <h2>contacto</h2>
+            <p>Precisa de ajuda ou deseja entrar em contacto conosco? Veja as opções abaixo:</p>
             <ul>
                 <li><strong>E-mail:</strong> <a href="mailto:suporte@origenslusas.com">suporte@origenslusas.com</a></li>
                 <li><strong>Telefone:</strong> <a href="tel:+351123456789">+351 123 456 789</a></li>

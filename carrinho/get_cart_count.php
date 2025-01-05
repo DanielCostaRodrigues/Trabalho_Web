@@ -15,15 +15,10 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
+require_once '../includes/db_connection.php'; // Inclui o ficheiro de conexão com a base de dados
 
-$dsn = 'mysql:host=localhost;dbname=web;charset=utf8mb4';
-$db_user = 'web';
-$db_password = 'web';
 
 try {
-
-    $pdo = new PDO($dsn, $db_user, $db_password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Consulta para calcular a quantidade total de produtos no carrinho do user
     $stmt = $pdo->prepare('SELECT SUM(quantity) AS total_quantity FROM cart WHERE user_id = :user_id');

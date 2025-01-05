@@ -1,8 +1,7 @@
 <?php
 
-$dsn = 'mysql:host=localhost;dbname=web;charset=utf8mb4';
-$db_user = 'web';
-$db_password = 'web';
+require_once '../includes/db_connection.php'; // Inclui o ficheiro de conexão com a base de dados
+
 
 // Obtém os parâmetros enviados via GET
 $productId = $_GET['product_id'] ?? null; // ID do produto a ser filtrado

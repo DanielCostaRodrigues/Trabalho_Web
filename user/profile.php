@@ -10,14 +10,11 @@ if (!isset($_SESSION['user_id'])) {
 $userId = $_SESSION['user_id'];
 
 
-$dsn = 'mysql:host=localhost;dbname=web;charset=utf8mb4';
-$db_user = 'web';
-$db_password = 'web';
+require_once '../includes/db_connection.php'; // Inclui o ficheiro de conexão com a base de dados
+
 
 try {
 
-    $pdo = new PDO($dsn, $db_user, $db_password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Verifica se o formulário foi enviado para atualizar a morada
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['address'])) {

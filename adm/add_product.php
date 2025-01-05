@@ -8,15 +8,10 @@ if (!isset($_SESSION['user_id']) || $_SESSION['is_admin'] != 1) {
     exit;
 }
 
-// Conexão com a base de dados
-$dsn = 'mysql:host=localhost;dbname=web;charset=utf8mb4'; // Dados de conexão.
-$db_user = 'web'; // Nome do user na bd.
-$db_password = 'web'; // passe da bd.
+require_once '../includes/db_connection.php'; // Inclui o ficheiro de conexão com a base de dados
+
 
 try {
-    // Cria uma nova conexão PDO com a bd.
-    $pdo = new PDO($dsn, $db_user, $db_password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Define o modo de erro como exceção(verifica erros).
 
     // Obter categorias disponíveis
     $stmt = $pdo->query('SELECT * FROM categories'); // Busca todas as categorias na bd.

@@ -31,7 +31,7 @@
                         <p>Você pode devolver qualquer item em até 30 dias após a entrega, desde que o produto esteja em perfeitas condições e com a embalagem original.</p>
                     </div>
                     <div class="faq-item">
-                        <h3>3. Como posso entrar em contato com o suporte?</h3>
+                        <h3>3. Como posso entrar em contacto com o suporte?</h3>
                         <p>Envie um e-mail para <a href="mailto:suporte@origenslusas.com">suporte@origenslusas.com</a> para obter ajuda personalizada.</p>
                     </div>
                 </div>

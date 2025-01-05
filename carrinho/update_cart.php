@@ -16,6 +16,7 @@ if (!isset($_SESSION['user_id'])) {
 
 $userId = $_SESSION['user_id'];
 
+require_once '../includes/db_connection.php'; // Inclui o ficheiro de conexão com a base de dados
 
 $data = json_decode(file_get_contents('php://input'), true);
 
@@ -34,14 +35,7 @@ if (!$productId || !$size || !$quantity || $quantity <= 0) {
 }
 
 
-$dsn = 'mysql:host=localhost;dbname=web;charset=utf8mb4';
-$db_user = 'web';
-$db_password = 'web';
-
 try {
-
-    $pdo = new PDO($dsn, $db_user, $db_password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Verificar se o produto já está no carrinho com o mesmo tamanho
     $stmt = $pdo->prepare("

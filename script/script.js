@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const emailValue = resetEmailInput.value; // Captura o valor do email
       if (emailValue.includes("@") && emailValue.includes(".")) {
         emailMessage.textContent =
-          "O email parece estar bem! Enviaremos o link de recuperação em breve.";
+          "O email parece estar correto! Enviaremos o link de recuperação em breve.";
         emailMessage.style.color = "green"; // Exibe mensagem de validação positiva
       } else if (emailValue === "") {
         emailMessage.textContent = ""; // Limpa a mensagem se o campo estiver vazio
@@ -99,6 +99,22 @@ document.addEventListener("DOMContentLoaded", () => {
         successMessage.style.display = "none";
       }, 3000);
     });
+  }
+});
+
+//Mensagem do login
+document.addEventListener("DOMContentLoaded", function () {
+  // Obtém o elemento do formulário
+  const loginForm = document.getElementById("loginForm");
+
+  if (loginForm) {
+    // Obtém a mensagem do atributo data-message
+    const message = loginForm.getAttribute("data-message");
+
+    if (message) {
+      alert(message); // Exibe a mensagem em um alerta
+      loginForm.reset(); // Limpa os campos do formulário
+    }
   }
 });
 

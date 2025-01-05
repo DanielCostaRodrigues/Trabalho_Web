@@ -5,15 +5,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') { // Verifica se o formulário foi en
     $email = $_POST['email']; // Obtém o email
     $password = $_POST['password']; // Obtém a pass
 
-
-    $dsn = 'mysql:host=localhost;dbname=web;charset=utf8mb4';
-    $db_user = 'web';
-    $db_password = 'web';
+    require_once '../includes/db_connection.php'; // Inclui o ficheiro de conexão com a base de dados
 
     try {
-        // Criação da conexão com a bd usando PDO
-        $pdo = new PDO($dsn, $db_user, $db_password);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // Verifica se o email já está registado
         $stmt = $pdo->prepare('SELECT * FROM users WHERE email = :email');
@@ -69,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') { // Verifica se o formulário foi en
                     <input type="email" id="email" name="email" placeholder="Escreva o seu email..." required>
 
                     <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" placeholder="Crie uma senha..." required>
+                    <input type="password" id="password" name="password" placeholder="Crie a sua password..." required>
 
                     <button type="submit">Registar</button>
                 </form>

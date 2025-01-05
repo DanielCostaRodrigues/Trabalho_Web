@@ -6,16 +6,13 @@ if (!isset($_SESSION['user_id']) || $_SESSION['is_admin'] != 1) {
     exit;
 }
 
-$dsn = 'mysql:host=localhost;dbname=web;charset=utf8mb4';
-$db_user = 'web';
-$db_password = 'web';
+require_once '../includes/db_connection.php'; // Inclui o ficheiro de conexão com a base de dados
+
 
 $categoryFilter = isset($_GET['category']) ? $_GET['category'] : 'all';
 $searchQuery = isset($_GET['search']) ? $_GET['search'] : '';
 
 try {
-    $pdo = new PDO($dsn, $db_user, $db_password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     if (isset($_GET['action'], $_GET['id']) && in_array($_GET['action'], ['activate', 'deactivate'])) {
         $productId = $_GET['id'];

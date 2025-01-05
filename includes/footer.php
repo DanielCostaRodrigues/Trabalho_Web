@@ -5,7 +5,7 @@
     <ul class="footer-links">
         <li><a href="../informacao/terms.php">Termos de Serviço</a></li>
         <li><a href="../informacao/privacy.php">Política de Privacidade</a></li>
-        <li><a href="../informacao/contact.php">Contato</a></li>
+        <li><a href="../informacao/contact.php">contacto</a></li>
     </ul>
 </div>
 </footer>

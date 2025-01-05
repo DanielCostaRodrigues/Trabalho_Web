@@ -8,15 +8,11 @@ if (!isset($_SESSION['user_id']) || $_SESSION['is_admin'] != 1) {
     exit;
 }
 
-// Conexão com a base de dados
-$dsn = 'mysql:host=localhost;dbname=web;charset=utf8mb4';
-$db_user = 'web';
-$db_password = 'web';
+require_once '../includes/db_connection.php'; // Inclui o ficheiro de conexão com a base de dados
+
 
 try {
-    // Conecta ao banco de dados
-    $pdo = new PDO($dsn, $db_user, $db_password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
 
     // Obter informações do produto
     if (isset($_GET['id'])) {
@@ -75,12 +71,14 @@ try {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Produto</title>
     <link rel="stylesheet" href="../css/admin_perfil.css">
 </head>
+
 <body>
     <div class="form-container-edit-product">
         <h1>Editar Produto</h1>
@@ -127,4 +125,5 @@ try {
         </form>
     </div>
 </body>
+
 </html>

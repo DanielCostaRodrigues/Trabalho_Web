@@ -2,18 +2,8 @@
 session_start();
 
 
-$dsn = 'mysql:host=localhost;dbname=web;charset=utf8mb4';
-$db_user = 'web';
-$db_password = 'web';
+require_once 'includes/db_connection.php'; // Inclui o ficheiro de conexão com a base de dados
 
-try {
-
-    $pdo = new PDO($dsn, $db_user, $db_password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    // Exibe mensagem de erro em caso de falha na conexão
-    die("Erro ao conectar com a base de dados: " . $e->getMessage());
-}
 
 // Variáveis para armazenar informações do user logado
 $userName = null;
@@ -31,6 +21,8 @@ if (isset($_SESSION['user_id'])) {
     }
 }
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -106,7 +98,7 @@ if (isset($_SESSION['user_id'])) {
             <ul class="footer-links">
                 <li><a href="informacao/terms.php">Termos de Serviço</a></li>
                 <li><a href="informacao/privacy.php">Política de Privacidade</a></li>
-                <li><a href="informacao/contact.php">Contato</a></li>
+                <li><a href="informacao/contact.php">Conctato</a></li>
             </ul>
         </div>
     </footer>

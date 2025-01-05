@@ -13,14 +13,10 @@ $perPage = isset($_GET['per_page']) ? (int)$_GET['per_page'] : 3; // Itens por p
 $offset = ($page - 1) * $perPage; // Calcula o offset para a consulta SQL
 
 
-$dsn = 'mysql:host=localhost;dbname=web;charset=utf8mb4';
-$db_user = 'web';
-$db_password = 'web';
+require_once '../includes/db_connection.php'; // Inclui o ficheiro de conexão com a base de dados
 
 try {
 
-    $pdo = new PDO($dsn, $db_user, $db_password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Consulta para obter o total de pedidos únicos do user
     $stmt = $pdo->prepare("SELECT COUNT(DISTINCT order_id) FROM order_history WHERE user_id = :user_id");

@@ -1,19 +1,7 @@
 <?php
 session_start();
 
-
-$dsn = 'mysql:host=localhost;dbname=web;charset=utf8mb4';
-$db_user = 'web';
-$db_password = 'web';
-
-try {
-
-    $pdo = new PDO($dsn, $db_user, $db_password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-
-    die("Erro ao conectar com a base de dados: " . $e->getMessage());
-}
+require_once '../includes/db_connection.php'; // Inclui o ficheiro de conexão com a base de dados
 
 // Variável para armazenar mensagens de feedback
 $message = '';
@@ -32,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($user) { // Se o user existir:
         if ($user['active'] == 0) {
             // Verifica se a conta está inativa
-            $message = 'Sua conta está inativa. Entre em contato com o suporte.';
+            $message = 'Sua conta está inativa. Entre em contacto com o suporte.';
         } elseif (password_verify($password, $user['password'])) {
             // Verifica se a pass corresponde.
             $_SESSION['user_id'] = $user['id']; // Salva o ID do user na sessão
@@ -71,7 +59,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="form_login">
                 <h2 class="title">Iniciar sessão</h2>
                 <!-- Formulário de login -->
-                <form id="loginForm" action="" method="POST">
+
+                <form id="loginForm" action="" method="POST" data-message="<?php echo htmlspecialchars($message, ENT_QUOTES, 'UTF-8'); ?>">
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" placeholder="Escreva o seu email..." required>
 
@@ -80,6 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <button type="submit">Iniciar sessão</button>
                 </form>
+
                 <a href="#" id="forgotPasswordLink">Esqueceu a sua password?</a>
                 <a href="../index.php">Voltar ao menu principal</a>
                 <a href="register.php">Criar conta</a>
@@ -106,20 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </div>
 
-    <!-- Script para exibir mensagens de erro/sucesso -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const message = "<?php echo htmlspecialchars($message, ENT_QUOTES, 'UTF-8'); ?>";
-            if (message) {
-                alert(message); // Exibe a mensagem em um alert
-                // Limpa os campos do formulário
-                const loginForm = document.getElementById('loginForm');
-                if (loginForm) {
-                    loginForm.reset();
-                }
-            }
-        });
-    </script>
+
     <script src="../script/script.js"></script>
 </body>
 

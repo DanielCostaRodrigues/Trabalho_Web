@@ -7,16 +7,10 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
-// Conexão com a base de dados
-$dsn = 'mysql:host=localhost;dbname=web;charset=utf8mb4';
-$db_user = 'web';
-$db_password = 'web';
+require_once '../includes/db_connection.php'; // Inclui o ficheiro de conexão com a base de dados
+
 
 try {
-
-    $pdo = new PDO($dsn, $db_user, $db_password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
     // Verificar se o user é admin
     $stmt = $pdo->prepare('SELECT id, is_admin FROM users WHERE id = :id'); // Prepara a query para buscar o user.
     $stmt->execute(['id' => $_SESSION['user_id']]); // Executa a query com o ID do user logado.

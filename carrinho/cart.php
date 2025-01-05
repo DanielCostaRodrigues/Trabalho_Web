@@ -7,15 +7,12 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
-$userId = $_SESSION['user_id'];
 
-$dsn = 'mysql:host=localhost;dbname=web;charset=utf8mb4';
-$db_user = 'web';
-$db_password = 'web';
+$userId = $_SESSION['user_id'];
+require_once '../includes/db_connection.php'; // Inclui o ficheiro de conexão com a base de dados
 
 try {
-    $pdo = new PDO($dsn, $db_user, $db_password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
 
     // Consulta para buscar os produtos do carrinho do user logado.
     $stmt = $pdo->prepare("

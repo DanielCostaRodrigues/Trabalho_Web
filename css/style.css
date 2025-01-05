@@ -260,7 +260,7 @@ body {
   text-align: center;
 }
 
-/* Seção de Contato */
+/* Seção de contacto */
 .all-contact.contact-container {
   background-color: #fff;
   padding: 30px;
@@ -1195,33 +1195,44 @@ body {
   color: #333;
 }
 
-/* Paginação */
-.product-details #pagination {
+/* Paginação estilizada */
+.product-details .pagination {
   display: flex;
-  gap: 5px;
   justify-content: center;
+  gap: 8px;
   margin-top: 20px;
 }
 
-.product-details #pagination button {
-  padding: 8px 15px;
-  background-color: #9e0909;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.product-details #pagination button.active {
-  background-color: #f0c040;
-  color: #000;
+.product-details .pagination a {
+  text-decoration: none;
+  padding: 10px 15px;
+  font-size: 16px;
   font-weight: bold;
+  color: #fff;
+  background-color: #9e0909; /* Cor de fundo padrão */
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.product-details #pagination button:hover {
-  background-color: #ffd700;
+.product-details .pagination a.active {
+  background-color: #f0c040; /* Cor de destaque para a página ativa */
+  color: #000;
+  cursor: default;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 }
+
+.product-details .pagination a:hover:not(.active) {
+  background-color: #ffd700; /* Cor ao passar o mouse */
+  transform: scale(1.1); /* Aumenta ligeiramente o botão */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.product-details .pagination a:active {
+  transform: scale(0.95); /* Efeito de clique */
+}
+
+
 
 /* Botão de Adicionar ao Cesto */
 #add-to-cart-button {
@@ -1718,6 +1729,12 @@ body {
 
   .genre .sidebar {
     position: static; /* Remove o sticky no mobile */
+  }
+
+  /* paginas comentarios*/
+  .product-details .pagination a {
+    font-size: 14px;
+    padding: 8px 12px;
   }
 }
 

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 23-Dez-2024 às 01:02
+-- Tempo de geração: 05-Jan-2025 às 18:36
 -- Versão do servidor: 10.4.32-MariaDB
--- versão do PHP: 8.2.12
+-- versão do PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `web`
+-- Banco de dados: `grupo106`
 --
 
 -- --------------------------------------------------------
@@ -103,7 +103,7 @@ INSERT INTO `products` (`id`, `name`, `description`, `price`, `image`, `stock`, 
 (7, 'Vestido Floral', 'Um lindo vestido floral perfeito para o verão.', 70.00, '../images/vestidofloral.jpg', 100, 2, '2024-12-13 03:05:39', 'XS,S,M,L,XL,XXL', 'Exterior', 1),
 (8, 'Blusa de Cetim', 'Blusa de cetim elegante e confortável.', 50.00, '../images/blusa.jpg', 100, 2, '2024-12-13 03:05:39', 'XS,S,M,L,XL,XXL', 'Parte Superior', 1),
 (10, 'Saia Midi Bege', 'Descrição do produto', 60.00, '../images/saia.jpg', 100, 2, '2024-12-13 21:27:54', 'XS,S,M,L,XL,XXL', 'Parte Inferior', 1),
-(11, 'Casaco Feminino Cinza', 'Descrição do produto', 110.00, '../images/casaco.jpg', 100, 2, '2024-12-13 21:27:54', 'XS,S,M,L,XL,XXL', 'Exterior', 1),
+(11, 'Casaco Feminino Cinza', 'Descrição do produto', 110.00, '../images/casaco.jpg', 98, 2, '2024-12-13 21:27:54', 'XS,S,M,L,XL,XXL', 'Exterior', 1),
 (12, 'Calções de Linho', 'Descrição do produto', 45.00, '../images/calcaolinho.jpg', 100, 2, '2024-12-13 21:27:54', 'XS,S,M,L,XL,XXL', 'Parte Inferior', 1),
 (13, 'Calças Flare', 'Descrição do produto', 55.00, '../images/calçasflare.jpg', 100, 2, '2024-12-13 21:27:54', 'XS,S,M,L,XL,XXL', 'Parte Inferior', 1),
 (14, 'Camisa Branca', 'Descrição do produto', 50.00, '../images/camisabranca.jpg', 100, 2, '2024-12-13 21:27:54', 'XS,S,M,L,XL,XXL', 'Parte Superior', 1),
@@ -210,7 +210,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de tabela `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=144;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=148;
 
 --
 -- AUTO_INCREMENT de tabela `categories`
@@ -222,25 +222,25 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT de tabela `order_history`
 --
 ALTER TABLE `order_history`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
 
 --
 -- AUTO_INCREMENT de tabela `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT de tabela `product_reviews`
 --
 ALTER TABLE `product_reviews`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
 -- AUTO_INCREMENT de tabela `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- Restrições para despejos de tabelas

@@ -2,6 +2,9 @@
 session_start();
 header('Content-Type: application/json');
 
+require_once '../includes/db_connection.php'; // Inclui o ficheiro de conexão com a base de dados
+
+
 if (!isset($_SESSION['user_id'])) {
 
     echo json_encode([
@@ -32,7 +35,7 @@ if (!$productId || !$comment) {
 }
 
 
-$dsn = 'mysql:host=localhost;dbname=web;charset=utf8mb4';
+$dsn = 'mysql:host=localhost;dbname=grupo106;charset=utf8mb4';
 $db_user = 'web';
 $db_password = 'web';
 

@@ -1,9 +1,8 @@
 <?php
 session_start();
 
-$dsn = 'mysql:host=localhost;dbname=web;charset=utf8mb4';
-$db_user = 'web';
-$db_password = 'web';
+require_once '../includes/db_connection.php'; // Inclui o ficheiro de conexão com a base de dados
+
 
 // Verifica user logado
 if (!isset($_SESSION['user_id'])) {
@@ -24,9 +23,6 @@ if (!$productId || empty($comment)) {
 }
 
 try {
-
-    $pdo = new PDO($dsn, $db_user, $db_password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Inserir o comentário na bd
     $stmt = $pdo->prepare("INSERT INTO product_reviews (product_id, user_id, comment, created_at) 
