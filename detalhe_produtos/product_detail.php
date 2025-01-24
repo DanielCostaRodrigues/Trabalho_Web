@@ -114,6 +114,9 @@ if ($produtoId) {
                     <button id="add-to-cart-button" onclick="addToCart()" <?= $produto['stock'] == 0 ? 'disabled' : '' ?>>
                         Adicionar ao Cesto
                     </button>
+                    <button class="btn-voltar" onclick="voltarPagina()">Voltar</button>
+
+
                 </div>
             </div>
 

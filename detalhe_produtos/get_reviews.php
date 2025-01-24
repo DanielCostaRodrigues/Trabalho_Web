@@ -15,10 +15,6 @@ if (!$productId) {
 }
 
 try {
-
-    $pdo = new PDO($dsn, $db_user, $db_password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
     // Conta o total de comentários para o produto
     $stmt = $pdo->prepare("SELECT COUNT(*) FROM product_reviews WHERE product_id = :product_id");
     $stmt->execute(['product_id' => $productId]); // Substitui o parâmetro `:product_id`

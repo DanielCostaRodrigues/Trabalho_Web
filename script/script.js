@@ -381,3 +381,8 @@ document.addEventListener("click", function (event) {
     userMenu.style.display = "none";
   }
 });
+
+//botao voltar detalhes produto
+function voltarPagina() {
+  window.history.back();
+}

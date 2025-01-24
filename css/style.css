@@ -256,19 +256,32 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  text-align: center;
-}
-
-/* Seção de contacto */
-.all-contact.contact-container {
   background-color: #fff;
   padding: 30px;
-  max-width: 700px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 180px auto;
+}
+
+/* .all-contact main {
+  background-color: #fff;
+  padding: 30px;
+  max-width: 800px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: left;
   margin: 0 auto;
+} */
+
+/* Seção de contacto */
+.all-contact.contact-container {
+  background-color: #fff; /* Fundo branco */
+  padding: 30px; /* Espaçamento interno */
+  max-width: 800px; /* Largura máxima */
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+  text-align: left; /* Alinhamento à esquerda */
+  margin: 0 auto; /* Centraliza horizontalmente */
 }
 
 .all-contact .contact-container h2 {
@@ -319,6 +332,7 @@ body {
   color: #9e0909;
   text-decoration: none;
   font-weight: bold;
+  padding: 4px;
 }
 
 .all-contact .contact-container a:hover {
@@ -1151,6 +1165,35 @@ body {
   color: #8b0000;
 }
 
+
+/* VOLTAR */
+.btn-voltar {
+  background-color: #f4f4f4; 
+  color: #333; 
+  border: 1px solid #ccc; /* Borda */
+  border-radius: 8px; /* Bordas arredondadas */
+  padding: 10px 20px; /* Espaçamento interno */
+  font-size: 16px; /* Tamanho da fonte */
+  cursor: pointer; /* Mostra que é clicável */
+  text-align: center; /* Centraliza o texto */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: all 0.3s ease; /* Transição suave */
+}
+
+.btn-voltar:hover {
+  background-color: #ddd; /* Cor de fundo ao passar o mouse */
+  border-color: #bbb; /* Cor da borda ao passar o mouse */
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2); /* Sombra mais forte ao passar o mouse */
+  transform: scale(1.05); /* Leve aumento ao passar o mouse */
+}
+
+.btn-voltar:active {
+  background-color: #ccc; /* Cor de fundo ao clicar */
+  transform: scale(1); /* Restaura o tamanho */
+}
+
+
+
 /* Comentários */
 .product-details .comments-section {
   margin-top: 30px;
@@ -1231,8 +1274,6 @@ body {
 .product-details .pagination a:active {
   transform: scale(0.95); /* Efeito de clique */
 }
-
-
 
 /* Botão de Adicionar ao Cesto */
 #add-to-cart-button {

@@ -20,7 +20,8 @@
             <ul>
                 <li><strong>E-mail:</strong> <a href="mailto:suporte@origenslusas.com">suporte@origenslusas.com</a></li>
                 <li><strong>Telefone:</strong> <a href="tel:+351123456789">+351 123 456 789</a></li>
-                <li><strong>Ajuda:</strong> Visite nossa <a href="help.php">página de ajuda</a> para mais informações.</li>
+                <li><strong>Ajuda:</strong> Visite nossa <a href="help.php"> página de ajuda </a> para mais informações.</li>
+
             </ul>
         </div>
     </main>

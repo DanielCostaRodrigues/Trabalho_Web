@@ -4,9 +4,7 @@ header('Content-Type: application/json');
 
 require_once '../includes/db_connection.php'; // Inclui o ficheiro de conexão com a base de dados
 
-
 if (!isset($_SESSION['user_id'])) {
-
     echo json_encode([
         'success' => false,
         'message' => 'Faça login para adicionar um comentário.'
@@ -26,7 +24,6 @@ $comment = $data['comment'] ?? null; // Comentário fornecido pelo user
 
 // Validação de dados fornecidos
 if (!$productId || !$comment) {
-    // Verifica se o ID do produto e o comentário foram fornecidos
     echo json_encode([
         'success' => false,
         'message' => 'Dados inválidos.'
@@ -34,17 +31,8 @@ if (!$productId || !$comment) {
     exit;
 }
 
-
-$dsn = 'mysql:host=localhost;dbname=grupo106;charset=utf8mb4';
-$db_user = 'web';
-$db_password = 'web';
-
 try {
-
-    $pdo = new PDO($dsn, $db_user, $db_password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    // Insere o comentário na bd
+    // Insere o comentário na bd usando a conexão $pdo do db_connection.php
     $stmt = $pdo->prepare('
         INSERT INTO product_reviews (product_id, user_id, comment, created_at)
         VALUES (:product_id, :user_id, :comment, NOW())
@@ -55,13 +43,11 @@ try {
         'comment' => $comment // Comentário fornecido
     ]);
 
-    // Retorna uma mensagem de sucesso
     echo json_encode([
         'success' => true,
         'message' => 'Comentário adicionado com sucesso!'
     ]);
 } catch (PDOException $e) {
-    // Em caso de erro, retorna uma mensagem de erro em JSON
     echo json_encode([
         'success' => false,
         'message' => 'Erro ao adicionar o comentário: ' . $e->getMessage()

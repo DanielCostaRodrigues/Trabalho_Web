@@ -81,7 +81,7 @@ try {
     <table>
         <thead>
             <tr>
-                <th>ID</th>
+                <!-- <th>ID</th> -->
                 <th>Imagem</th>
                 <th>Nome</th>
                 <th>Preço</th>
@@ -95,7 +95,7 @@ try {
         <tbody>
             <?php foreach ($products as $product): ?>
                 <tr>
-                    <td><?php echo $product['id']; ?></td>
+                    <!-- <td>< ?php echo $product['id']; ?></td> -->
                     <td>
                         <img src="<?php echo htmlspecialchars($product['image']); ?>" alt="<?php echo htmlspecialchars($product['name']); ?>">
                     </td>

@@ -1,5 +1,15 @@
 <?php
-include('../adm/admin_check.php'); // Verifica se é admin    
+session_start();
+
+// Verificar se o user é admin
+if (!isset($_SESSION['user_id']) || $_SESSION['is_admin'] != 1) {
+    // Redireciona para a página inicial caso o user não esteja autenticado ou não seja admin
+    header('Location: index.php');
+    exit;
+}
+
+require_once '../includes/db_connection.php'; // Inclui o ficheiro de conexão com a base de dados
+
 ?>
 
 <!DOCTYPE html>
